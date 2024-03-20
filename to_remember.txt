@@ -1,0 +1,7 @@
+
+program do robienia pliku requirements.txt
+pip install pipreqs
+pipreqs /sciezka/do/twojego/projektu
+
+
+
