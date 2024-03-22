@@ -3,8 +3,8 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-app.config['ENV'] = 'development'
-app.config['DEBUG'] = True
+# app.config['ENV'] = 'development'
+# app.config['DEBUG'] = True
 
 task1_model = pickle.load(open('./ml-models/model_1/deases_forest_model.pkl', 'rb'))
 
