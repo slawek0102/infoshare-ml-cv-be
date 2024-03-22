@@ -1,3 +1,4 @@
+.DS_Store
 .idea
 __pycache__
-aws-ec2-key-pair.pem
+security/aws-ec2-key-pair.pem

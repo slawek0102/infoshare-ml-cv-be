@@ -1,0 +1,9 @@
+
+program do robienia pliku requirements.txt
+pip install pipreqs
+pipreqs /sciezka/do/twojego/projektu
+
+zamykam terminal a http wciaz dziala
+nohup gunicorn --bind 0.0.0.0:5001 app:app &
+
+
