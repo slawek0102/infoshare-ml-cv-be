@@ -1,9 +1,21 @@
 
+on Localhost
 program do robienia pliku requirements.txt
 pip install pipreqs
 pipreqs /sciezka/do/twojego/projektu
 
-zamykam terminal a http wciaz dziala
+start flask on AWS
 nohup gunicorn --bind 0.0.0.0:5001 app:app &
 
+display process
+ps aux | grep gunicorn
 
+Srodowisko on AWS
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+DO ZROBIENIA
+pip install gunicorn
+pip install scikit-learn
