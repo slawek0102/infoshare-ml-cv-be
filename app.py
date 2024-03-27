@@ -35,11 +35,13 @@ def get_health_values(req):
 
 @app.route("/")
 def hello_world():
+    print("Hello, World!")
     return "<p>Hello, World!</p>"
 
 
 @app.post("/task_1" )
 def task_1():
+    print("Task 1")
     req = request.get_json()
     prediction = task1_model.predict(get_health_values(req))
     prediction_int = int(prediction[0])
