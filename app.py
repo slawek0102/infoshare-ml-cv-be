@@ -4,7 +4,8 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
+
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
 
@@ -31,15 +32,17 @@ def get_health_values(req):
        req["thal"]
     ]], columns=feature_names)
     return df_input
-
+print("Hello, Server !!!!!")
 
 @app.route("/")
 def hello_world():
+    print("Hello, World!")
     return "<p>Hello, World!</p>"
 
 
-@app.post("/task_1" )
+@app.route("/task_1", methods=['POST'])
 def task_1():
+    print("Task 1")
     req = request.get_json()
     prediction = task1_model.predict(get_health_values(req))
     prediction_int = int(prediction[0])
@@ -47,7 +50,7 @@ def task_1():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=80, debug=True)
 
 
 

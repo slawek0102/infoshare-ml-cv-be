@@ -5,7 +5,7 @@ pip install pipreqs
 pipreqs /sciezka/do/twojego/projektu
 
 start flask on AWS
-nohup gunicorn --bind 0.0.0.0:5001 app:app &
+nohup gunicorn --bind 0.0.0.0:80 app:app &
 
 display process
 ps aux | grep gunicorn
