@@ -3,8 +3,8 @@ from flask_cors import CORS
 import pickle
 import pandas as pd
 
-app = Flask(__name__)
-CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
+application = Flask(__name__)
+CORS(application, supports_credentials=True, resources={r"/*": {"origins": "*"}})
 
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
@@ -34,13 +34,13 @@ def get_health_values(req):
     return df_input
 print("Hello, Server !!!!!")
 
-@app.route("/")
+@application.route("/")
 def hello_world():
     print("Hello, World!")
     return "<p>Hello, World!</p>"
 
 
-@app.route("/task_1", methods=['POST'])
+@application.route("/task_1", methods=['POST'])
 def task_1():
     print("Task 1")
     req = request.get_json()
