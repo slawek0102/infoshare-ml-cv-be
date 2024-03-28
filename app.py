@@ -49,8 +49,7 @@ def task_1():
     return jsonify({"prediction": prediction_int})
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+
 
 
 
