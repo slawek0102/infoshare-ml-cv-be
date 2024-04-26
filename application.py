@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 
 application = Flask(__name__)
-CORS(application)
+CORS(application, supports_credentials=True, resources={r"/*": {"origins": "*"}})
 
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
